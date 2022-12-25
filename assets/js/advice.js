@@ -10,7 +10,7 @@ export async function advice(){
     var obj = advice["slip"];
 
    //Transfering the text to the proper place
-   transferText(document.querySelector("p.advice__text"), obj["advice"])
+   transferText(document.querySelector("div.advice__text p"), obj["advice"])
    transferText(document.querySelector("h4.advice__id span"), "#"+obj["id"])
 }
 

@@ -4,7 +4,8 @@ import { transferText, advice } from "./advice.js"
 window.onload = () => {
     /* Getting the elements after loading*/
     const button = document.querySelector("button.submit")
-    const text = document.querySelector("p.advice__text");
+    const divText = document.querySelector("div.advice__text");
+    const text = document.querySelector("div.advice__text p");
     const span = document.querySelector("h4.advice__id span");
     const dice = document.querySelector("button.submit div.dice")
     
@@ -16,7 +17,7 @@ window.onload = () => {
 
     /* On clicking the button generanting a new advice */
     button.addEventListener("click", async () => {
-        transferText(text, "Await" + dots)
+        transferText(text, "Await"+dots)
         transferText(span, dots)
 
 
