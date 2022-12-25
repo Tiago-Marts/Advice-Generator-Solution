@@ -1,0 +1,170 @@
+.submit{
+    background-color: var(--primary-green);
+    padding: 1.5em;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.dice{
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: var(--step-1);
+    aspect-ratio: 1;
+    background-color: var(--neutral-dark-blue);
+    border-radius: 4px;
+    transform-origin: center;
+    transform: rotate(0deg) scale(1);
+
+}
+
+.roll{
+    animation: rolltheDice 2s ease;
+}
+
+.rolled{
+    animation: showUp 1s cubic-bezier(1, 0, 0, 1);
+}
+
+
+
+@keyframes rolltheDice {
+
+    0%{
+
+        transform: rotate(0deg);
+    }
+
+    5%{
+        transform: rotate(-20deg);
+    }
+
+    10%{
+        transform: rotate(20deg);
+    }
+
+    15%{
+        transform: rotate(-20deg);
+    }
+
+    20%{
+        transform: rotate(20deg);
+    }
+
+    30%{
+        transition: cubic-bezier(0.68, -0.55, 0.265, 1);
+        transform: rotate(-20deg);
+    }
+    
+
+    45%{
+        transform: rotate(-270deg)  ;
+    }
+
+    45%{
+        transform: rotate(-480deg)  ;
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+
+
+
+}
+
+@keyframes showUp{
+    0%{
+        transform: rotate(90deg) scale(1.25);
+    }
+
+    50%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+/* Dice styles*/
+.one::after, .two::after,
+.three::after, .four::after,
+.five::after, .six::after
+{
+    position: absolute;
+    content: "";
+    width: 20%;
+    aspect-ratio: 1;
+
+    background-color: var(--primary-green);
+    box-shadow: var(--primary-green);
+    border-radius: 50%;
+}
+
+.five::after, .four::after{
+    box-shadow: -6px -6px 0px 0px var(--primary-green),
+    6px -6px 0px 0px var(--primary-green),
+    -6px 6px 0px 0px var(--primary-green),
+    6px 6px 0px 0px var(--primary-green);
+}
+
+.four::after, .two::after, .six::after{
+    background-color: transparent;
+}
+
+.three::after{
+    box-shadow: -6px -6px 0px 0px var(--primary-green),
+    6px 6px 0px 0px var(--primary-green);
+}
+
+.two::after{
+    box-shadow: -6px 0px 0px 0px var(--primary-green),
+    6px 0px 0px 0px var(--primary-green);
+}
+
+.six::after{
+    box-shadow: -6px 0px 0px 0px var(--primary-green),
+    6px 0px 0px 0px var(--primary-green),
+    -6px -6px 0px 0px var(--primary-green),
+    6px -6px 0px 0px var(--primary-green),
+    -6px 6px 0px 0px var(--primary-green),
+    6px 6px 0px 0px var(--primary-green);
+}
+
+@media screen and (min-width: 690px) {
+    .five::after, .four::after{
+        box-shadow: -10px -10px 0px 0px var(--primary-green),
+        10px -10px 0px 0px var(--primary-green),
+        -10px 10px 0px 0px var(--primary-green),
+        10px 10px 0px 0px var(--primary-green);
+    }
+    
+    .four::after, .two::after, .six::after{
+        background-color: transparent;
+    }
+    
+    .three::after{
+        box-shadow: -10px -10px 0px 0px var(--primary-green),
+        10px 10px 0px 0px var(--primary-green);
+    }
+    
+    .two::after{
+        box-shadow: -10px 0px 0px 0px var(--primary-green),
+        10px 0px 0px 0px var(--primary-green);
+    }
+    
+    .six::after{
+        box-shadow: -10px 0px 0px 0px var(--primary-green),
+        10px 0px 0px 0px var(--primary-green),
+        -10px -10px 0px 0px var(--primary-green),
+        10px -10px 0px 0px var(--primary-green),
+        -10px 10px 0px 0px var(--primary-green),
+        10px 10px 0px 0px var(--primary-green);
+    }
+}

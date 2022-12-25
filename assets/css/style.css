@@ -1,0 +1,84 @@
+/*Organized in this way:
+- position
+-display
+-styles 
+*/
+
+/*Content card*/
+.advice__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 45ch;
+    aspect-ratio: 1/1.25;
+    background-color: var(--neutral-blue);
+    padding: 1rem;
+}
+
+.advice__text, .advice__id{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+
+    width: 100%;
+
+}
+
+
+.advice__text{
+    height: 5em;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+/* Load animation*/
+.load{
+    height: var(--step-1);
+    aspect-ratio: 1/1.25;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2px;
+}
+
+.dots{
+    width: 80%;
+    aspect-ratio: 1;
+    background-color: black;
+    border-radius: 50%;
+    animation: infinite alternate load 0.5s ease-in-out;
+}
+
+@keyframes load {
+    from{
+        transform: translateY(2px);
+    }
+
+    to{
+        transform: translateY(-2px);
+    }
+}
+
+.dots:nth-of-type(2){
+    animation: infinite alternate load-2 0.5s ease-in-out;
+}
+
+.dots:nth-of-type(3){
+    animation-delay: 0.25s;
+}
+
+@keyframes load-2 {
+    from{
+        transform: translateY(-2px);
+    }
+
+    to{
+        transform: translateY(2px);
+    }
+}
+
